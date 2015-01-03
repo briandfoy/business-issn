@@ -231,7 +231,7 @@ This module is released under the terms of the Perl Artistic License.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 1999-2008, brian d foy, All Rights Reserved.
+Copyright © 1999-2015, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
 You may redistribute this under the same terms as Perl itself.
 
