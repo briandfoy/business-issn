@@ -1,8 +1,8 @@
 Revision history for Perl module Business::ISSN
 
-0.91 - Wed Aug  6 06:30:10 2008
+0.91 - 2008-08-06
 	* module now maintained by brian d foy
 	* modernized, fully tested, and fixed RT #38174
 
-0.20  Tue Feb  9 11:09:41 1999
+0.20 - 1999-02-09
 	* 1st version
