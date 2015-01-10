@@ -47,7 +47,7 @@ my %WriteMakefile = (
 			},
 		},
 
-	clean  => { FILES    => q|Business-* cover_db *.old *.bak| },
+	clean => { FILES => "$dist-*" },
 	);
 
 sub arguments { \%WriteMakefile }
