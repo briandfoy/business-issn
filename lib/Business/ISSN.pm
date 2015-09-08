@@ -15,11 +15,11 @@ use Exporter;
 
 $VERSION = '0.91';
 
-sub new 
+sub new
 	{
 	my $class       = shift;
 	my $common_data = _common_format shift;
-	
+
 	return unless $common_data;
 
 	my $self = bless {}, $class;
@@ -27,7 +27,7 @@ sub new
 	$self->{'issn'}      = $common_data;
 
 	$common_data =~m/(\d{7,7})([\dxX])$/;
-	
+
 	@{$self}{ qw(checksum code) } = ( $2, $1 );
 
 	$self->_check_validity;
@@ -44,25 +44,25 @@ sub fix_checksum
 	{
 	my $self = shift;
 	my $debug = 1;
-	
+
 	my $last_char = substr($self->_issn, -1, 1);
 
 	my $checksum = _checksum $self->_issn;
 
 	substr( $self->{issn}, -1, 1) = $checksum;
-   
+
 	$self->_check_validity;
-	
+
 	return 0 if $last_char eq $checksum;
 	return 1;
 	}
 
 sub as_string
-	{		
+	{
 	return unless $_[0]->is_valid;
 
 	my $issn = $_[0]->_issn;
-	
+
 	substr($issn, $_[0]->_hyphen_positions, 0) = '-';
 
 	return $issn;
@@ -71,7 +71,7 @@ sub as_string
 sub is_valid_checksum
 	{
 	my $data = _common_format shift;
-	return 0 unless $data;        
+	return 0 unless $data;
 	return 1 if substr($data, -1, 1) eq _checksum $data;
 	return 0;
 	}
@@ -84,22 +84,22 @@ sub _check_validity
 sub _checksum
 	{
 	my $data = _common_format shift;
-	
+
 	return unless $data;
-	
+
 	my @digits = split //, $data;
-	my $sum    = 0;         
+	my $sum    = 0;
 
 	foreach( reverse 2..8 ) # oli 10
 		{
 		$sum += $_ * (shift @digits);
 		}
-	
+
 	#return what the check digit should be
 	my $checksum = (11 - ($sum % 11))%11;
-	
+
 	$checksum = 'X' if $checksum == 10;
-	
+
 	return $checksum;
 	}
 
@@ -107,17 +107,19 @@ sub _common_format
 	{
 	#we want uppercase X's
 	my $data = uc shift;
-	
+
 	#get rid of everything except decimal digits and X
 	$data =~ s/[^0-9X]//g;
-	
+
 	return $data if $data =~ m/^\d{7}[0-9X]\z/;
-					  
+
 	return;
 	}
 
 1;
 __END__
+
+=encoding utf8
 
 =head1 NAME
 
@@ -127,23 +129,23 @@ Business::ISSN - Perl extension for International Standard Serial Numbers
 
 	use Business::ISSN;
 	$issn_object = Business::ISSN->new('1456-5935');
-	
+
 	$issn_object = Business::ISSN->new('14565935');
-	
+
 	# print the ISSN (with hyphen)
 	print $issn_object->as_string;
-	
+
 	# check to see if the ISSN is valid
 	$issn_object->is_valid;
-	
+
 	#fix the ISSN checksum.  BEWARE:  the error might not be
 	#in the checksum!
 	$issn_object->fix_checksum;
-	
+
 	#EXPORTABLE FUNCTIONS
-		
+
 	use Business::ISSN qw( is_valid_checksum );
-		
+
 	#verify the checksum
 	if( is_valid_checksum('01234567') ) { ... }
 
@@ -163,12 +165,12 @@ the eighth character must be a digit, 'x', or 'X'.
 
 The string passed as the ISSN need not be a valid ISSN as
 long as it superficially looks like one.  This allows one to
-use the C<fix_checksum> method. 
+use the C<fix_checksum> method.
 
 One should check the validity of the ISSN with C<is_valid()>
-rather than relying on the return value of the constructor. 
+rather than relying on the return value of the constructor.
 
-If all one wants to do is check the validity of an ISSN, 
+If all one wants to do is check the validity of an ISSN,
 one can skip the object-oriented  interface and use the
 c<is_valid_checksum()> function which is exportable on demand.
 
@@ -182,7 +184,7 @@ Return the ISSN checksum.
 
 =item $obj->as_string
 
-Return the ISSN as a string. 
+Return the ISSN as a string.
 
 A terminating 'x' is changed to 'X'.
 
@@ -190,9 +192,9 @@ A terminating 'x' is changed to 'X'.
 
 Returns 1 if the checksum is valid.
 
-Returns 0 if the ISSN does not pass the checksum test.  
+Returns 0 if the ISSN does not pass the checksum test.
 The constructor accepts invalid ISSN's so that
-they might be fixed with C<fix_checksum>.  
+they might be fixed with C<fix_checksum>.
 
 =item  $obj->fix_checksum
 
