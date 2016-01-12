@@ -15,8 +15,7 @@ use Exporter;
 
 $VERSION = '1.001';
 
-sub new
-	{
+sub new {
 	my $class       = shift;
 	my $common_data = _common_format shift;
 
@@ -40,8 +39,7 @@ sub is_valid          { $_[0]->{'valid'}        }
 sub checksum          { $_[0]->{'checksum'}     }
 sub _hyphen_positions { 4 }
 
-sub fix_checksum
-	{
+sub fix_checksum {
 	my $self = shift;
 	my $debug = 1;
 
@@ -57,8 +55,7 @@ sub fix_checksum
 	return 1;
 	}
 
-sub as_string
-	{
+sub as_string {
 	return unless $_[0]->is_valid;
 
 	my $issn = $_[0]->_issn;
@@ -68,8 +65,7 @@ sub as_string
 	return $issn;
 	}
 
-sub is_valid_checksum
-	{
+sub is_valid_checksum {
 	my $data = _common_format shift;
 	return 0 unless $data;
 	return 1 if substr($data, -1, 1) eq _checksum $data;
@@ -81,8 +77,7 @@ sub _check_validity
 	$_[0]->{'valid'}  = is_valid_checksum( $_[0]->_issn );
 	}
 
-sub _checksum
-	{
+sub _checksum {
 	my $data = _common_format shift;
 
 	return unless $data;
@@ -103,8 +98,7 @@ sub _checksum
 	return $checksum;
 	}
 
-sub _common_format
-	{
+sub _common_format {
 	#we want uppercase X's
 	my $data = uc shift;
 
