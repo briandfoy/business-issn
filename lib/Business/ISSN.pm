@@ -13,7 +13,7 @@ use Exporter;
 @ISA       = qw(Exporter);
 @EXPORT_OK = qw(is_valid_checksum);
 
-$VERSION = '0.91';
+$VERSION = '1.001';
 
 sub new
 	{
