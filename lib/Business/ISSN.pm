@@ -25,7 +25,7 @@ sub new {
 
 	$self->{'issn'}      = $common_data;
 
-	$common_data =~m/(\d{7,7})([\dxX])$/;
+	$common_data =~m/([0-9]{7,7})([0-9\dxX])$/;
 
 	@{$self}{ qw(checksum code) } = ( $2, $1 );
 
@@ -105,7 +105,7 @@ sub _common_format {
 	#get rid of everything except decimal digits and X
 	$data =~ s/[^0-9X]//g;
 
-	return $data if $data =~ m/^\d{7}[0-9X]\z/;
+	return $data if $data =~ m/^[0-9]{7}[0-9X]\z/;
 
 	return;
 	}
