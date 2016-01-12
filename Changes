@@ -1,5 +1,8 @@
 Revision history for Perl module Business::ISSN
 
+1.001 2016-01-12T18:51:29Z
+	* Freshen the module
+
 0.91 - 2008-08-06
 	* module now maintained by brian d foy
 	* modernized, fully tested, and fixed RT #38174
