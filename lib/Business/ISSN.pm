@@ -219,7 +219,6 @@ comparison routine.  Returns 1 if the ISSN is valid, 0 otherwise.
 =head1 AUTHOR
 
 Currently maintained by brian d foy C<< <brian.d.foy@gmail.com> >>.
-Sami Poikonen <sp@iki.fi>
 
 Original module by Sami Poikonen, based on Business::ISBN by brian d foy.
 
@@ -227,7 +226,7 @@ This module is released under the terms of the Perl Artistic License.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 1999-2015, brian d foy <bdfoy@cpan.org>. All rights reserved.
+Copyright © 1999-2016, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
 You may redistribute this under the same terms as Perl itself.
 
