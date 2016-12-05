@@ -72,8 +72,7 @@ sub is_valid_checksum {
 	return 0;
 	}
 
-sub _check_validity
-	{
+sub _check_validity {
 	$_[0]->{'valid'}  = is_valid_checksum( $_[0]->_issn );
 	}
 
