@@ -1,5 +1,8 @@
 Revision history for Perl module Business::ISSN
 
+1.002 2016-12-05T18:59:45Z
+	* Remove the prereq.t test. I'll do that locally.
+
 1.001 2016-01-12T18:51:29Z
 	* Freshen the module
 
