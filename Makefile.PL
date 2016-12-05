@@ -53,8 +53,13 @@ my %WriteMakefile = (
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
 
 	'CONFIGURE_REQUIRES' => {
+		'Exporter'              => '0',
 		'ExtUtils::MakeMaker'   => '6.64',
 		'File::Spec::Functions' => '0',
+		'strict'                => '0',
+		'subs'                  => '0',
+		'vars'                  => '0',
+		'warnings'              => '0',
 		},
 
 	'BUILD_REQUIRES' => {
