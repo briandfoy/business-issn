@@ -6,11 +6,11 @@ use warnings;
 no warnings;
 
 use subs qw(_common_format _checksum is_valid_checksum);
-use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
 use Exporter qw(import);
 
-@EXPORT_OK = qw(is_valid_checksum);
+our @EXPORT    = qw();
+our @EXPORT_OK = qw(is_valid_checksum);
 
 our $VERSION = '1.003';
 
