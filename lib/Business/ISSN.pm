@@ -8,9 +8,8 @@ no warnings;
 use subs qw(_common_format _checksum is_valid_checksum);
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
-use Exporter;
+use Exporter qw(import);
 
-@ISA       = qw(Exporter);
 @EXPORT_OK = qw(is_valid_checksum);
 
 our $VERSION = '1.003';
