@@ -16,6 +16,8 @@
 
 =for HTML <a href="https://metacpan.org/pod/Business::ISSN"><img src="https://img.shields.io/cpan/v/Business-ISSN.svg" /></A>
 
+=for HTML <a href="https://zenodo.org/badge/latestdoi/3938690"><img src="https://zenodo.org/badge/3938690.svg"></a>
+
 =head1 The Business::ISSN module
 
 This is the I<README> for the L<Business::ISSN> Perl module. You're probably
