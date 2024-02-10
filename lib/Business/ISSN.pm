@@ -224,7 +224,7 @@ This module is released under the terms of the Perl Artistic License.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 1999-2021, brian d foy <briandfoy@pobox.com>. All rights reserved.
+Copyright © 1999-2024, brian d foy <briandfoy@pobox.com>. All rights reserved.
 
 You may redistribute this under the terms of the Artistic License 2.0.
 
