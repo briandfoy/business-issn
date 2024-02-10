@@ -216,7 +216,7 @@ comparison routine.  Returns 1 if the ISSN is valid, 0 otherwise.
 
 =head1 AUTHOR
 
-Currently maintained by brian d foy C<< <brian.d.foy@gmail.com> >>.
+Currently maintained by brian d foy C<< <briandfoy@pobox.com> >>.
 
 Original module by Sami Poikonen, based on Business::ISBN by brian d foy.
 
