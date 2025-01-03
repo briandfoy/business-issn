@@ -4,7 +4,6 @@
 abstract: Business::ISSN - Perl extension for International Standard Serial Numbers
 authors:
 - alias: briandfoy
-  email: bdfoy@cpan.org
   family-names: foy
   given-names: brian d
   orcid: 0000-0002-0283-8283
